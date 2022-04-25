@@ -3,20 +3,21 @@ This is a JSON editor which can new, load, save and edit JSON file, in both code
 	
 The stand-alone editor tries to make the process of editting and transfering through JSON files intuitive, user-friendly, and easy to coordinate between tech and non-tech teams. 
 	
-Below is a screenshot, on the left is JSON browser, on the right is visualized content table. 
+Below is a screenshot, on the **left is JSON browser**, on the **right is visualized content table**. 
 ### ![image](https://user-images.githubusercontent.com/91817338/165051041-ce4ac3ac-080f-4c1e-b852-5babecf3ae6a.png)
 
 # Prerequisites
-### PyQt5: used to create the user interface
+### 1. PyQt5: used to create the user interface
 	pip install PyQt5
-### Qt.py: used to load the .ui file directly
+### 2. Qt.py: used to load the .ui file directly
 	pip install Qt.py
 
 # Run it!
 ### 1. Download and unzip the JSON_Editor_Py package.
 ### 2. Run the main.py directly.
 ![image](https://user-images.githubusercontent.com/91817338/165061015-686cecb6-fd4d-47d8-8978-8f44d8d23dd7.png)
-*** When saving the file, the editor will take the data in the left side(the JSON browser) to store in a file. So if you're making changes using the right side(the content table) or both sides, remember to apply changes to the left side before saving. 
+
+*** When saving the file, the editor will take the data in the left side(the JSON browser) to store in a file. So if you're making changes using the right side(the content table) or both sides, **remember to apply changes to the left side before saving**. 
 
 # Features
 ### Create, Read, Save JSON files
