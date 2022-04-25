@@ -37,7 +37,7 @@ Below is a screenshot, on the left is JSON browser, on the right is visualized c
 |-----|----|
 | ![Search](https://user-images.githubusercontent.com/91817338/165056643-5a8a8497-da0c-4812-a537-7da2e0dc1b08.png) | ![Search](https://user-images.githubusercontent.com/91817338/165056175-981e1d3b-ef3f-4538-95ca-53d9a8140c16.png) |
 
-### Search
+### Search for Keys
 | Search | Search |
 |-----|----|
 | ![Search](https://user-images.githubusercontent.com/91817338/165058688-03a601ad-0845-4564-8b36-b50485229484.png) | ![Search](https://user-images.githubusercontent.com/91817338/165058942-f1c1fea9-cb8f-4fdc-9966-6d612c143825.png) |
