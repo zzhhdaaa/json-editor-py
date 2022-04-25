@@ -25,7 +25,7 @@ Below is a screenshot, on the left is JSON browser, on the right is visualized c
 ### Two-Way Editable, Two Clean Views
 | JSON Browser | Content Table |
 |-----|----|
-| ![JSON Browser](https://user-images.githubusercontent.com/91817338/165057780-b305a886-4ded-4a2b-9069-a90891012306.png) | ![Content Table](https://user-images.githubusercontent.com/91817338/165057632-90b170b4-3746-4eed-924d-177e628166f4.png) |
+| ![JSON Browser](https://user-images.githubusercontent.com/91817338/165064491-041a3869-99ea-4485-8c08-1909b7b49f7a.png) | ![Content Table](https://user-images.githubusercontent.com/91817338/165057632-90b170b4-3746-4eed-924d-177e628166f4.png) |
 
 ### One Button Expand or Collapse All
 | Expand All | Collapse All |
