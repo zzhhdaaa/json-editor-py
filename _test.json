@@ -1,0 +1,97 @@
+{
+   "About": {
+         "author": "Daaa",
+         "website": "https://www.daaa.one/",
+         "email": "zzhhdaaa@gmail.com"
+      },
+   "TestA": [
+      {
+         "key0": "value0",
+         "key1": "value1"
+      },
+      {
+         "key0": "value2",
+         "key1": "value3"
+      }
+   ],
+   "TestB": [
+      {
+         "key0": "value4",
+         "key1": "value5"
+      },
+      {
+         "key0": "value6",
+         "key1": "value7"
+      }
+   ],
+    "_person": {
+        "firstName": "John",
+        "lastName": "Smith",
+        "age": 35
+    },
+    "_address": {
+        "streetAddress": "21 2nd Street",
+        "city": "New York",
+        "state": "NY",
+        "postalCode": "10021"
+    },
+    "_phoneNum": [
+        {
+            "type": "home",
+            "number": "212 555-1234"
+        },
+        {
+            "type": "fax",
+            "number": "646 555-4567"
+        }
+    ],
+    "_question": [
+        {
+            "type": "sport",
+            "question": "Which one is correct team name in NBA?",
+            "options": [
+                "New York Bulls",
+                "Los Angeles Kings",
+                "Golden State Warriros",
+                "Huston Rocket"
+            ],
+            "answer": "Huston Rocket"
+        },
+        {
+            "type": "math",
+            "question": "5 + 7 = ?",
+            "options": [
+                "10",
+                "11",
+                "12",
+                "13"
+            ],
+            "answer": "12"
+        },
+        {
+            "type": "math",
+            "question": "12 - 8 = ?",
+            "options": [
+                "1",
+                "2",
+                "3",
+                "4"
+            ],
+            "answer": "4"
+        }
+    ],
+    "_eBooks":[
+        {
+            "language":"Pascal",
+            "edition":"third"
+        },
+        {
+            "language":"Python",
+            "edition":"four"
+        },
+        {
+            "language":"SQL",
+            "edition":"second"
+        }
+   ]
+}
