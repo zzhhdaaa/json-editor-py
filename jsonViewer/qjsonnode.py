@@ -32,7 +32,6 @@ class QJsonNode(object):
         rootNode.dtype = type(value)
 
         if isinstance(value, dict):
-            # TODO: not sort will break things, but why?
             nodes = sorted(value.items())
 
             for key, value in nodes:

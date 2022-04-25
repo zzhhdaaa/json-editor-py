@@ -236,13 +236,8 @@ class QJsonView(QtWidgets.QTreeView):
         :param text: str. input text for de-serialization
         :param index: QModelIndex. parent index
         """
-        from textEditDialog import TextEditDialog
 
         # test value
         if not text:
-            text = "{'food': 'pizza', 'fruit': {'apple': 20, 'orange': 15}}"
-
-        dialog = TextEditDialog(text)
-        if dialog.exec_():
-            text = dialog.getTextEdit()
-            self.add(text, index)
+            text = "{'_newEntry0': [{'key0': 'value0','key1': 'value1'},{'key0': 'value2','key1': 'value3'}]}"
+        self.add(text, index)

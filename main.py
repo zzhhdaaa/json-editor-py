@@ -1,8 +1,17 @@
 """
-Main window to launch JsonEditor
+This is the main window to launch the editor
 The whole UI mainly divided by two part:
 1. Browser(json) on the left
 2. Model(table) on the right
+"""
+
+"""
+References:
+This JSON Editor Tool highly relies on packages: QJsonModel, jsonViewer,
+which provide classes and methods to display and control dictionary-like,
+hierarchical data structure.
+QJsonModel: https://github.com/dridk/QJsonModel.git
+jsonViewer: https://github.com/leixingyu/jsonEditor.git
 """
 
 # Required: Qt.py (pip install Qt.py)
@@ -10,6 +19,7 @@ import sys
 import os
 import json
 import ast
+import webbrowser
 import Qt
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QFileDialog
@@ -46,7 +56,7 @@ class MainWindow(QtWidgets.QMainWindow):
             "QTreeView { show-decoration-selected: 1; }"
             "QTreeView::item:hover { background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 lightgray, stop: 1 white); }"
             "QTreeView::item:selected:active { background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 lightgray, stop: 1 lightgray); color: black; }"
-            "QTreeView::item:selected:!active { background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 lightgray, stop: 1 lightgray); color: black;}" )
+            "QTreeView::item:selected:!active { background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 lightgray, stop: 1 lightgray); color: black;}")
         self.ui_tree_view.setAnimated(True)
         self.ui_grid_layout.addWidget(self.ui_tree_view, 0, 2)
 
@@ -81,6 +91,11 @@ class MainWindow(QtWidgets.QMainWindow):
         self.actionNew.triggered.connect(self.newFile)
         self.actionOpen.triggered.connect(self.openFile)
         self.actionSave.triggered.connect(self.saveFile)
+        self.actionCopy.triggered.connect(self.ui_tree_view.copy)
+        # TODO: Paste Shortcut
+        # self.actionPaste.triggered.connect(self.ui_tree_view.paste(0))
+        self.actionUser_Manual.triggered.connect(lambda: self.openWebpage('https://github.com/zzhhdaaa/JSON_Editor_Py/blob/main/README.md'))
+        self.actionDeveloper.triggered.connect(lambda: self.openWebpage('https://www.daaa.one/'))
 
         # Json Viewer
         self.ui_tree_view.setModel(self._proxyModel)
@@ -145,6 +160,9 @@ class MainWindow(QtWidgets.QMainWindow):
         output = self.ui_tree_view.asDict(None)
         jsonDict = json.dumps(output, indent=3, sort_keys=True)
         self.ui_view_edit.setPlainText(str(jsonDict))
+
+    def openWebpage(self, link):
+        webbrowser.open_new(link)
 
     '''
     def pprint(self):
