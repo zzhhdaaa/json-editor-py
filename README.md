@@ -1,7 +1,7 @@
 # JSON_Editor_Py
-A JSON editor which can new, load, save and edit JSON file, in both code browser and content table views. 
+This is a JSON editor which can new, load, save and edit JSON file, in both code browser and content table views. 
 	
-This stand-alone editor tries to make the process of editting and transfering through JSON files intuitive, user-friendly, and easy to coordinate between tech and non-tech teams. 
+The stand-alone editor tries to make the process of editting and transfering through JSON files intuitive, user-friendly, and easy to coordinate between tech and non-tech teams. 
 	
 Below is a screenshot, on the left is JSON browser, on the right is visualized content table. 
 ### ![image](https://user-images.githubusercontent.com/91817338/165051041-ce4ac3ac-080f-4c1e-b852-5babecf3ae6a.png)
