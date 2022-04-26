@@ -409,6 +409,7 @@
     <addaction name="actionNew"/>
     <addaction name="actionOpen"/>
     <addaction name="actionSave"/>
+    <addaction name="actionImport_xml"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -476,6 +477,14 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionImport_xml">
+   <property name="text">
+    <string>Import .xml</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
    </property>
   </action>
  </widget>
