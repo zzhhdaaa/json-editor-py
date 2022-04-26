@@ -59,9 +59,9 @@ Below is a screenshot, on the **left is JSON browser**, on the **right is visual
 - [x] Save, Load and Create JSON files
 - [x] Edit entries
 - [x] Two-way Interface
-- [x] Expand/Collapse, Drag&Drop, Search, Sort
+- [x] Drag & Drop edit, Expand/Collapse, Search, Sort
 - [x] Import and convert .xml files
-- [ ] Drag & drop to load files
+- [ ] Drag & Drop to load files
 - [ ] Custom Stylesheet
 - [ ] Multi-tab editor
 
