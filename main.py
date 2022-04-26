@@ -20,6 +20,7 @@ import os
 import json
 import ast
 import webbrowser
+import xmltodict
 import Qt
 from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import QFileDialog
@@ -91,6 +92,7 @@ class MainWindow(QtWidgets.QMainWindow):
         self.actionNew.triggered.connect(self.newFile)
         self.actionOpen.triggered.connect(self.openFile)
         self.actionSave.triggered.connect(self.saveFile)
+        self.actionImport_xml.triggered.connect(self.importXML)
         self.actionCopy.triggered.connect(self.ui_tree_view.copy)
         # TODO: Paste Shortcut
         # self.actionPaste.triggered.connect(self.ui_tree_view.paste(0))
@@ -112,6 +114,20 @@ class MainWindow(QtWidgets.QMainWindow):
             self.ui_view_edit.clear()
             output = json.load(file)
             jsonDict = json.dumps(output, indent=3, sort_keys=True)
+            self.ui_view_edit.setPlainText(str(jsonDict))
+            self.updateModel()
+            self.setWindowTitle(self.filePath[0])
+
+    # Open file
+    def importXML(self):
+        print("Open!")
+        self.filePath = QFileDialog.getOpenFileName(self, "Open JSON", self.filePath[0], "XML Files (*.xml)")
+        print(self.filePath)
+        if self.filePath[0] != '':
+            with open(self.filePath[0]) as xml_file:
+                data_dict = xmltodict.parse(xml_file.read())
+            self.ui_view_edit.clear()
+            jsonDict = json.dumps(data_dict, indent=3, sort_keys=True)
             self.ui_view_edit.setPlainText(str(jsonDict))
             self.updateModel()
             self.setWindowTitle(self.filePath[0])
