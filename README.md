@@ -51,7 +51,7 @@ Below is a screenshot, on the **left is JSON browser**, on the **right is visual
 | ![Sort by Keys](https://user-images.githubusercontent.com/91817338/165059511-68561154-a930-491e-a003-93d294a99171.png) | ![Sort by Values](https://user-images.githubusercontent.com/91817338/165059656-3f3fea7a-3d69-457d-b28d-48d310891512.png) |
 
 ### Import .xml Files and Convert to .json
-| Original .xml Files | Import & Convert | Auto Convert |
+| Original .xml Files | Import | Auto Convert |
 |-----|----|----|
 | ![Search](https://user-images.githubusercontent.com/91817338/165196460-ecc3edbc-52b5-4c6f-9452-1750458691e7.png) | ![Search](https://user-images.githubusercontent.com/91817338/165196584-7e9546c4-143d-4bef-bc74-3de9b695a978.png) | ![Search](https://user-images.githubusercontent.com/91817338/165196646-665eda0f-f605-49f6-87e7-2f94ac59be00.png) |
 
