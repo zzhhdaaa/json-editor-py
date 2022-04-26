@@ -13,6 +13,8 @@ Below is a screenshot, on the **left is JSON browser**, on the **right is visual
 	pip install PyQt5
 ### 2. Qt.py: used to load the .ui file directly
 	pip install Qt.py
+### 3. xmltodict: converting .xml to python dictionary
+	pip install xmltodict
 
 # Run it!
 ### 1. Download and unzip the JSON_Editor_Py package.
