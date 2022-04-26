@@ -60,7 +60,7 @@ Below is a screenshot, on the **left is JSON browser**, on the **right is visual
 - [x] Edit entries
 - [x] Two-way Interface
 - [x] Expand/Collapse, Drag&Drop, Search, Sort
-- [ ] Import and convert .xml files
+- [x] Import and convert .xml files
 - [ ] Drag & drop to load files
 - [ ] Custom Stylesheet
 - [ ] Multi-tab editor
