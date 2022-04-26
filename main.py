@@ -118,7 +118,7 @@ class MainWindow(QtWidgets.QMainWindow):
             self.updateModel()
             self.setWindowTitle(self.filePath[0])
 
-    # Open file
+    # Import .xml and convert to .json
     def importXML(self):
         print("Open!")
         self.filePath = QFileDialog.getOpenFileName(self, "Open JSON", self.filePath[0], "XML Files (*.xml)")
