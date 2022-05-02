@@ -67,6 +67,8 @@ Below is a screenshot, on the **left is JSON browser**, on the **right is visual
 - [ ] Custom Stylesheet
 - [ ] Multi-tab editor
 
+*Too busy to make updates thesedays, will continue adding features after May 13th, 2022.
+
 # Reference
 	https://github.com/AtsushiSakai/PyJSONViewer.git
 	https://github.com/leixingyu/jsonEditor.git
