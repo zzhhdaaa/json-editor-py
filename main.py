@@ -21,8 +21,7 @@ import json
 import ast
 import webbrowser
 import xmltodict
-import Qt
-from PyQt5 import QtWidgets, QtCore
+from PyQt5 import QtWidgets, QtCore, uic
 from PyQt5.QtWidgets import QFileDialog
 from jsonViewer.qjsonmodel import QJsonModel
 from jsonViewer.qjsonview import QJsonView
@@ -48,7 +47,7 @@ class MainWindow(QtWidgets.QMainWindow):
         super(MainWindow, self).__init__()
 
         # Load UI file
-        Qt._loadUi(UI_PATH, self)
+        uic.loadUi(UI_PATH, self)
 
         # Set the model(table) StyleSheet & add it to layout
         self.ui_tree_view = QJsonView()
@@ -107,7 +106,7 @@ class MainWindow(QtWidgets.QMainWindow):
     # Open file
     def openFile(self):
         print("Open!")
-        self.filePath = QFileDialog.getOpenFileName(self, "Open JSON", self.filePath[0], "JSON Files (*.json)")
+        self.filePath = QFileDialog.getOpenFileName(self, "Open JSON File", self.filePath[0], "JSON Files (*.json)")
         print(self.filePath)
         if self.filePath[0] != '':
             file = open(self.filePath[0], 'r')
@@ -121,7 +120,7 @@ class MainWindow(QtWidgets.QMainWindow):
     # Import .xml and convert to .json
     def importXML(self):
         print("Open!")
-        self.filePath = QFileDialog.getOpenFileName(self, "Import XML", self.filePath[0], "XML Files (*.xml)")
+        self.filePath = QFileDialog.getOpenFileName(self, "Import XML File", self.filePath[0], "XML Files (*.xml)")
         print(self.filePath)
         if self.filePath[0] != '':
             with open(self.filePath[0]) as xml_file:
@@ -135,7 +134,7 @@ class MainWindow(QtWidgets.QMainWindow):
     # Save file
     def saveFile(self):
         print("Save!")
-        self.filePath = QFileDialog.getSaveFileName(self, "Save JSON", self.filePath[0], "JSON Files (*.json)")
+        self.filePath = QFileDialog.getSaveFileName(self, "Save JSON File", self.filePath[0], "JSON Files (*.json)")
         if self.filePath[0] != '':
             file = open(self.filePath[0], 'w')
             file.write(self.ui_view_edit.toPlainText())
@@ -144,7 +143,7 @@ class MainWindow(QtWidgets.QMainWindow):
     # New file, using NEW_DICT as template
     def newFile(self):
         print("New!")
-        self.filePath = QFileDialog.getSaveFileName(self, "Save JSON", self.filePath[0], "JSON Files (*.json)")
+        self.filePath = QFileDialog.getSaveFileName(self, "New JSON File", self.filePath[0], "JSON Files (*.json)")
         if self.filePath[0] != '':
             file = open(self.filePath[0], 'w')
             self.ui_view_edit.clear()

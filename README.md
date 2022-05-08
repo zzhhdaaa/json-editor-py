@@ -11,9 +11,7 @@ Below is a screenshot, on the **left is JSON browser**, on the **right is visual
 # Prerequisites
 ### 1. PyQt5: used to create the user interface
 	pip install PyQt5
-### 2. Qt.py: used to load the .ui file directly
-	pip install Qt.py
-### 3. xmltodict: converting .xml to python dictionary
+### 2. xmltodict: converting .xml to python dictionary
 	pip install xmltodict
 
 # Run it!
