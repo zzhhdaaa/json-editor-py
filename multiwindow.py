@@ -4,6 +4,7 @@ The whole UI mainly divided by two part:
 1. Browser(json) on the left
 2. Model(table) on the right
 """
+import main
 
 """
 References:
@@ -26,6 +27,7 @@ from PyQt5.QtWidgets import QFileDialog
 from jsonViewer.qjsonmodel import QJsonModel
 from jsonViewer.qjsonview import QJsonView
 from jsonViewer.qjsonnode import QJsonNode
+from main import MainWindow
 
 # High dpi scaling
 QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
@@ -33,7 +35,7 @@ QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_UseHighDpiPixmaps, True)
 
 # Set UI file (QT designer)
 MODULE_PATH = os.path.dirname(os.path.abspath(__file__))
-UI_PATH = os.path.join(MODULE_PATH, 'ui', 'jsonEditor.ui')
+UI_PATH = os.path.join(MODULE_PATH, 'ui', 'multiWindow.ui')
 
 # Default JSON file
 with open("_test.json", "r") as f:
@@ -42,24 +44,19 @@ with open("_new.json", "r") as f:
     NEW_DICT = json.load(f)
 
 
-class MainWindow(QtWidgets.QMainWindow):
+class MultiWindow(QtWidgets.QMainWindow):
     def __init__(self):
-        super(MainWindow, self).__init__()
+        super(MultiWindow, self).__init__()
 
         # Load UI file
         uic.loadUi(UI_PATH, self)
 
         # Set the model(table) StyleSheet & add it to layout
-        self.ui_tree_view = QJsonView()
-        self.ui_tree_view.setStyleSheet(
-            'QWidget{font: 10pt "Consolas";}'
-            "QTreeView { show-decoration-selected: 1; }"
-            "QTreeView::item:hover { background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 lightgray, stop: 1 white); }"
-            "QTreeView::item:selected:active { background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 lightgray, stop: 1 lightgray); color: black; }"
-            "QTreeView::item:selected:!active { background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 lightgray, stop: 1 lightgray); color: black;}")
-        self.ui_tree_view.setAnimated(True)
-        self.ui_grid_layout.addWidget(self.ui_tree_view, 0, 2)
-
+        self.ui_tree_view = main.MainWindow()
+        self.ui_grid_layout.addWidget(self.ui_tree_view, 0, 0)
+        self.ui_grid_layout.addWidget(self.ui_tree_view, 0, 1)
+        #self.ui_grid_layout.addWidget(self.ui_tree_view, 0, 1)
+'''
         # Load initial TEST_DICT
         root = QJsonNode.load(TEST_DICT)
         self._model = QJsonModel(root, self)
@@ -97,7 +94,6 @@ class MainWindow(QtWidgets.QMainWindow):
         # self.actionPaste.triggered.connect(self.ui_tree_view.paste(0))
         self.actionUser_Manual.triggered.connect(lambda: self.openWebpage('https://github.com/zzhhdaaa/JSON_Editor_Py/blob/main/README.md'))
         self.actionDeveloper.triggered.connect(lambda: self.openWebpage('https://www.daaa.one/'))
-        self.actionAdd_Tab.triggered.connect(self.show)
 
         # Json Viewer
         self.ui_tree_view.setModel(self._proxyModel)
@@ -179,21 +175,21 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def openWebpage(self, link):
         webbrowser.open_new(link)
-
-    '''
+'''
+'''
     def pprint(self):
         output = self.ui_tree_view.asDict(
             self.ui_tree_view.getSelectedIndices())
         jsonDict = json.dumps(output, indent=4, sort_keys=True)
 
         print(jsonDict)
-    '''
+'''
 
 
 def show():
     global window
     app = QtWidgets.QApplication(sys.argv)
-    window = MainWindow()
+    window = MultiWindow()
     window.show()
     sys.exit(app.exec_())
 

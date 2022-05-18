@@ -425,9 +425,16 @@
     <addaction name="actionUser_Manual"/>
     <addaction name="actionDeveloper"/>
    </widget>
+   <widget class="QMenu" name="menuAdd_Tab">
+    <property name="title">
+     <string>Add Tab</string>
+    </property>
+    <addaction name="actionAdd_Tab"/>
+   </widget>
    <addaction name="menuFile"/>
    <addaction name="menuEdit"/>
    <addaction name="menuAbout"/>
+   <addaction name="menuAdd_Tab"/>
   </widget>
   <action name="actionOpen">
    <property name="text">
@@ -485,6 +492,11 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionAdd_Tab">
+   <property name="text">
+    <string>Add Tab</string>
    </property>
   </action>
  </widget>
