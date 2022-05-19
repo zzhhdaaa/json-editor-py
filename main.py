@@ -23,6 +23,7 @@ import webbrowser
 import xmltodict
 from PyQt5 import QtWidgets, QtCore, uic
 from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtCore import Qt
 from jsonViewer.qjsonmodel import QJsonModel
 from jsonViewer.qjsonview import QJsonView
 from jsonViewer.qjsonnode import QJsonNode
@@ -119,7 +120,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     # Import .xml and convert to .json
     def importXML(self):
-        print("Open!")
+        print("XML!")
         self.filePath = QFileDialog.getOpenFileName(self, "Import XML File", self.filePath[0], "XML Files (*.xml)")
         print(self.filePath)
         if self.filePath[0] != '':
@@ -178,6 +179,22 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def openWebpage(self, link):
         webbrowser.open_new(link)
+
+    def dropEvent(self, event):
+        self.print("0000")
+        if event.mimeData().hasUrls():
+            event.setDropAction(Qt.CopyAction)
+            event.accept()
+
+            links = []
+
+            for url in event.mimeData().urls():
+                if url.isLocalFile():
+                    links.append(str(url.toLocalFile()))
+                else:
+                    links.append(str(url.toString()))
+
+            self.print(links)
 
     '''
     def pprint(self):
